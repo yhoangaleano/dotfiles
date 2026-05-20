@@ -1,0 +1,6 @@
+# enter key executes immediately (tab puts in prompt for editing)
+enter_accept = true
+
+[sync]
+# sync v2
+records = true

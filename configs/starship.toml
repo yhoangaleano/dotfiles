@@ -1,0 +1,62 @@
+format = """
+[](bg:#9A348E)\
+$os\
+[](fg:#9A348E bg:#DA627D)\
+$directory\
+[](fg:#DA627D bg:#FCA311)\
+$git_branch\
+$git_status\
+[](fg:#FCA311 bg:#000000)\
+$nodejs\
+$python\
+$golang\
+$rust\
+[](fg:#000000 bg:#14213D)\
+$cmd_duration\
+[](fg:#14213D)\
+\n$character\
+"""
+
+[os]
+disabled = false
+style = "bg:#9A348E fg:#090608"
+format = "[ $symbol ]($style)"
+
+[directory]
+style = "bg:#DA627D fg:#000000"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+style = "bg:#FCA311 fg:#000000"
+format = "[ $symbol$branch ]($style)"
+
+[git_status]
+style = "bg:#FCA311 fg:#000000"
+format = "[ $all_status$ahead_behind ]($style)"
+
+[cmd_duration]
+min_time = 2000
+style = "bg:#14213D fg:#AAAAAA"
+format = "[ ⏱ $duration ]($style)"
+
+[nodejs]
+style = "bg:#000000 fg:#339933"
+format = "[ $symbol($version) ]($style)"
+
+[python]
+style = "bg:#000000 fg:#FFD43B"
+format = "[ $symbol($version) ]($style)"
+
+[golang]
+style = "bg:#000000 fg:#00ADD8"
+format = "[ $symbol($version) ]($style)"
+
+[rust]
+style = "bg:#000000 fg:#CE412B"
+format = "[ $symbol($version) ]($style)"
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"

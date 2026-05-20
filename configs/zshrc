@@ -1,0 +1,63 @@
+# PATH
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/fvm/default/bin"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+
+# Locale
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Env
+export GOOGLE_CLOUD_PROJECT=""
+
+# Aliases
+alias cls="clear"
+
+# Modern CLI
+alias cat="bat"
+alias ls="eza --icons --group-directories-first"
+alias ll="eza -la --icons --group-directories-first"
+alias tree="eza --tree --icons"
+
+# History
+HISTSIZE=50000
+SAVEHIST=50000
+HISTFILE=~/.zsh_history
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt SHARE_HISTORY
+
+# Runtimes
+eval "$(mise activate zsh)"
+
+# Completions (debe ir antes de los plugins)
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  autoload -Uz compinit
+  compinit
+fi
+zstyle ':completion:*' menu select
+setopt MENU_COMPLETE
+
+# Plugins (syntax-highlighting debe ir último)
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Tools (Ctrl+T buscar archivos, Alt+C navegar carpetas; Ctrl+R lo maneja atuin)
+source <(fzf --zsh)
+eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"
+
+# Yazi — al salir con q, la terminal queda en el directorio que estabas navegando
+function y() {
+  local tmp="$(mktemp -t yazi-cwd.XXXXXX)" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
+# Prompt
+eval "$(starship init zsh)"

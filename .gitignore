@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Backups y swap
+*.backup.*
+*.bak
+*~
+*.swp
+*.swo
+
+# Auto-generados por agentes/AI (per-machine, leakean rutas absolutas)
+.atl/
+.claude/
+.cache/
+
+# Secretos — defensivo (nunca deberían estar acá, pero por las dudas)
+.env
+.env.*
+*.pem
+*.key
+*.cer
+*.p12
+id_rsa*
+id_ed25519*
+id_ecdsa*
+id_dsa*
+*.pub
+known_hosts
+authorized_keys
+
+# IDEs y editores
+.idea/
+.vscode/
+*.iml
+
+# Node (por si en el futuro agregás algo JS)
+node_modules/
