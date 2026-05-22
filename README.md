@@ -153,7 +153,7 @@ brew install mole
 
 ```bash
 brew install --cask google-chrome brave-browser google-drive
-brew install --cask dbeaver-community visual-studio-code intellij-idea
+brew install --cask dbeaver-community visual-studio-code intellij-idea-ce
 brew install --cask android-studio docker-desktop iterm2
 brew install --cask handy spotify bruno
 brew install --cask font-jetbrains-mono-nerd-font
@@ -335,7 +335,7 @@ docker compose version
 | Google Drive | Almacenamiento |
 | DBeaver Community | Cliente de bases de datos |
 | Visual Studio Code | Editor |
-| IntelliJ IDEA | IDE |
+| IntelliJ IDEA Community | IDE |
 | Android Studio | IDE para desarrollo mobile |
 | Docker Desktop | Containers y Docker Compose |
 | iTerm2 | Terminal con split panes y Option key configurable por separado |

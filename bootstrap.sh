@@ -143,7 +143,7 @@ install_casks() {
     google-drive
     dbeaver-community
     visual-studio-code
-    intellij-idea
+    intellij-idea-ce
     android-studio
     docker-desktop
     iterm2
@@ -160,7 +160,7 @@ install_casks() {
       ok "$cask"
     else
       info "  brew install --cask $cask"
-      brew install --cask "$cask" || err "Falló cask: $cask"
+      brew install --cask --adopt "$cask" || err "Falló cask: $cask"
     fi
   done
 }
