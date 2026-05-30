@@ -143,7 +143,7 @@ install_casks() {
     google-drive
     dbeaver-community
     visual-studio-code
-    intellij-idea-ce
+    intellij-idea
     android-studio
     docker-desktop
     iterm2
