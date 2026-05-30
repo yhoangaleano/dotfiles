@@ -149,6 +149,7 @@ install_casks() {
     iterm2
     handy
     shottr
+    stats
     spotify
     bruno
     font-jetbrains-mono-nerd-font

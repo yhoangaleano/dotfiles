@@ -155,7 +155,7 @@ brew install mole
 brew install --cask google-chrome brave-browser google-drive
 brew install --cask dbeaver-community visual-studio-code intellij-idea
 brew install --cask android-studio docker-desktop iterm2
-brew install --cask handy shottr spotify bruno
+brew install --cask handy shottr stats spotify bruno
 brew install --cask font-jetbrains-mono-nerd-font
 ```
 
@@ -341,6 +341,7 @@ docker compose version
 | iTerm2 | Terminal con split panes y Option key configurable por separado |
 | Handy | Speech to text |
 | Shottr | Capturas de pantalla con anotaciones (flechas, cuadros, blur, scrolling capture, OCR) — atajos por defecto Cmd+Shift+1/2, no chocan con los nativos |
+| Stats | Monitor de sistema en la menubar (CPU, RAM, GPU, red, disco, batería, temperaturas) — Swift nativo, ~30 MB RAM, MIT |
 | Spotify | Música |
 | Bruno | REST client open-source (alternativa a Postman) |
 | Claude (manual) | AI desktop |
