@@ -201,7 +201,9 @@ install_pi_coding_agent() {
     return
   fi
   info "Instalando Pi Coding Agent..."
-  curl -fsSL https://pi.dev/install.sh | sh \
+  # Forzar PATH a homebrew para que el `npm install -g` interno del installer
+  # use el node de homebrew (estable) y no termine atado al node de mise.
+  PATH="/opt/homebrew/bin:$PATH" bash -c 'curl -fsSL https://pi.dev/install.sh | sh' \
     || err "No se pudo instalar Pi Coding Agent"
 }
 
@@ -541,9 +543,9 @@ main() {
   refresh_font_cache
   install_gentle_ai
   install_claude_code
-  install_pi_coding_agent
   setup_zshrc
   setup_mise
+  install_pi_coding_agent
   setup_flutter
   accept_android_licenses
   setup_tool_configs
