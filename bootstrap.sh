@@ -148,6 +148,7 @@ install_casks() {
     docker-desktop
     iterm2
     handy
+    shottr
     spotify
     bruno
     font-jetbrains-mono-nerd-font
